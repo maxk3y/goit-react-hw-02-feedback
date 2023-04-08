@@ -9,7 +9,6 @@ export class FeedbackApp extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
-    isThereAnyFeedback: false,
   };
 
   onLeaveFeedback = key => this.setState({ [key]: this.state[key] + 1 });
@@ -25,14 +24,6 @@ export class FeedbackApp extends Component {
 
     return ((this.state.good / this.countTotalFeedback()) * 100).toFixed(2);
   }
-
-  showStatHandler = () => {
-    if (this.countTotalFeedback() > 0) {
-      this.setState({
-        isThereAnyFeedback: !this.state.isThereAnyFeedback,
-      });
-    }
-  };
 
   render() {
     return (
